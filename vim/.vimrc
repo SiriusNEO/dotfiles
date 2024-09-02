@@ -25,15 +25,14 @@ autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(win
 let g:nerdtree_tabs_open_on_console_startup=1
 
 "taglist setting
-let Tlist_Ctags_Cmd="/opt/homebrew/bin/ctags"
-let Tlist_Auto_Open=1
-let Tlist_Show_One_File=1    " 只展示一个文件的taglist
-let Tlist_Exit_OnlyWindow=1  " 当taglist是最后以个窗口时自动退出
-let Tlist_Use_Right_Window=1 " 在右边显示taglist窗口
-let Tlist_Sort_Type="name"   " tag按名字排序
+"let Tlist_Ctags_Cmd="/opt/homebrew/bin/ctags"
+"let Tlist_Auto_Open=1
+"let Tlist_Show_One_File=1    " 只展示一个文件的taglist
+"let Tlist_Exit_OnlyWindow=1  " 当taglist是最后以个窗口时自动退出
+"let Tlist_Use_Right_Window=1 " 在右边显示taglist窗口
+"let Tlist_Sort_Type="name"   " tag按名字排序
 
-" ctags 索引文件
-set tags+=~/.vim/tags/cpp_src/tags
+"OmniCpp setting
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1

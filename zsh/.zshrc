@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/bin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/sirius/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,9 +70,15 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+plugins=(
+	copypath copyfile copybuffer
+	sudo git docker
+	zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+)
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -101,50 +107,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 setopt nonomatch
 
-export RISCV="/mnt/c/Users/17138/Desktop/CPU/riscv-gnu-toolchain/"
-export PATH=$PATH:$RISCV/bin
 
-eval $(thefuck --alias)
 
-export PATH=$PATH:~/anaconda3/bin/
+# Use vim as the default editor
+export EDITOR=/usr/bin/vim
 
-export TVM_HOME=/home/sirius/catalyst/mlc-ai
-export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
+# The following are some PATHs and ENV_VATs that can be added
 
-export TVM_LOG_DEBUG=DEFAULT=2
+# Mac Homebrew
+export PATH=$PATH:/opt/homebrew/bin/
 
-export CMAKE_HOME=/home/sirius/cmake-3.25.0-rc3-linux-x86_64
-export PATH=$PATH:$CMAKE_HOME/bin
-
-export ROS_DISTRO=noetic
-
-# export ALL_PROXY="http://172.30.144.1:7890"
-
-win_host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-export http_proxy="http://$win_host_ip:7890"
-export https_proxy="http://$win_host_ip:7890"
-
-# For terminator running above of VcXsrv
-export DISPLAY=$win_host_ip:0
-export LIBGL_ALWAYS_INDIRECT=1
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/sirius/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/sirius/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/sirius/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/sirius/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# CUDA 
-export CUDA_HOME=/usr/local/cuda/
-export PATH=$PATH:$CUDA_HOME/bin/
-export CUDA_PATH=/usr/local/cuda/
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/lib
+# In macOS there are two ctags: an older version (/usr/bin/ctags) and a newer version (installed by homebrew usually) 
+# To let newer ctags work, set a tricky alias
+alias ctags="/opt/homebrew/bin/ctags"
