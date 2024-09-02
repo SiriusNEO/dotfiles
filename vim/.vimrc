@@ -1,7 +1,7 @@
 "vim setting
 set nu
 set nocompatible
-syntax enable
+syntax on
 colorscheme monokai
 set tabstop=4
 set softtabstop=4
@@ -25,6 +25,7 @@ autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(win
 let g:nerdtree_tabs_open_on_console_startup=1
 
 "taglist setting
+let Tlist_Ctags_Cmd="/opt/homebrew/bin/ctags"
 let Tlist_Auto_Open=1
 let Tlist_Show_One_File=1    " 只展示一个文件的taglist
 let Tlist_Exit_OnlyWindow=1  " 当taglist是最后以个窗口时自动退出
