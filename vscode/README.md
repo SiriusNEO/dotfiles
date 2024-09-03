@@ -39,13 +39,13 @@
 
 ### Cheat Sheet
 
-(Ctrl = Command on macOS)
+(Ctrl = Command on macOS in most cases)
 
 | Function                       | **Press**                                                    |
 | ------------------------------ | ------------------------------------------------------------ |
 | Quick Open                     | Ctrl + P                                                     |
 | Command Palette                | Ctrl + Shift + P, or type `>` in Quick Open                  |
-| Open Terminal                  | Ctrl + `                                                     |
+| Open Terminal                  | Ctrl + ` (Note: also use Ctrl in macOS in this case!)                                                     |
 | New                            | New Untitled File: Ctrl + N (W: close)<br />New Window: Ctrl + Shift + N (W: close) |
 | Search                         | In current file: Ctrl + F<br />In Repo: Ctrl + Shift + F<br />Replace: Ctrl + R, Ctrl + Shift + R |
 | Jump                           | Jump to the Beginning/End of the Line: Home/End (Windows), Command + ←/→ (macOS)<br />Jump by Word: Ctrl + ←/→ (Windows), Optional + ←/→ (macOS) |
