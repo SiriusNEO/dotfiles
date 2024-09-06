@@ -11,12 +11,14 @@ Due to the limit of file size in Github, I only put the config file (`.xxxrc`) i
 - [vim.tar](https://cloud.tsinghua.edu.cn/d/25c1b2bbec9a4592aca4/files/?p=%2Fvim.tar&dl=1)
 - [zsh.tar](https://cloud.tsinghua.edu.cn/d/25c1b2bbec9a4592aca4/files/?p=%2Fzsh.tar&dl=1)
 
-Usage:
+Usage (Take zsh as an example):
 
 ```bash
-wget -O <file-name> <file-link>
-tar -zxf <file-name>
-mv <file-name> ~
+mkdir -p my-zsh && cd my-zsh
+wget -O zsh.tar 'https://cloud.tsinghua.edu.cn/d/25c1b2bbec9a4592aca4/files/?p=%2Fzsh.tar&dl=1'
+tar -xf zsh.tar
+cp .oh-my-zsh -r ~
+cp .zshrc ~
 ```
 
 Note:
